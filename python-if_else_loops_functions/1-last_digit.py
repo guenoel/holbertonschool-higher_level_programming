@@ -2,9 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 
-lastdigit = int(str(number)[-1])
-if number < 0:
-    lastdigit = lastdigit * -1
+lastdigit = number % 10 if number >= 0 else number % -10
 
 if lastdigit > 5:
     comp = "and is greater than 5"
