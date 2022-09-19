@@ -8,4 +8,4 @@ class Square:
     def __init__(self, size=None):
         """commentaire d'instance"""
 
-        pass
+        self.__size = size
