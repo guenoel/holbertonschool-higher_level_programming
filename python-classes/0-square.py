@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def Square
+class Square:
     pass
