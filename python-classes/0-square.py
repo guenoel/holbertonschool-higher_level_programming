@@ -5,5 +5,4 @@
 class Square:
     """commentaires sur la classe"""
 
-
     pass
