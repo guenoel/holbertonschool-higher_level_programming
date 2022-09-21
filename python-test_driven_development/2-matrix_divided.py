@@ -25,5 +25,5 @@ def matrix_divided(matrix, div):
                 raise ZeroDivisionError("division by zero")
             else:
                 row.append(float("{:.2f}".format(matrix[x][y] / div)))
-            new_matrix.append(row)
+        new_matrix.append(row)
     return new_matrix
