@@ -18,7 +18,8 @@ def matrix_divided(matrix, div):
         for y in range(columns):
             num = matrix[x][y]
             if num is None or not isinstance(num, (float, int)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix \
+                    (list of lists) of integers/floats")
             elif div is None or not isinstance(div, (float, int)):
                 raise TypeError("div must be a number")
             elif div == 0:
