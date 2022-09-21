@@ -12,19 +12,7 @@
     >>> matrix_divided(matrix, "School")
     Traceback (most recent call last):
         ...
-    TypeError: div must be an integer
-
-::
-
-    >>> matrix_divided(matrix, None)
-    Traceback (most recent call last):
-        ...
-    TypeError: div must be an integer
-
-::
-
-    >>> matrix_divided(matrix, math.inf)
-    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+    TypeError: div must be a number
 
 ::
 
@@ -45,7 +33,7 @@
     >>> matrix_divided(matrix, None)
     Traceback (most recent call last):
         ...
-    TypeError: div must be an integer
+    TypeError: div must be a number
 
 ::
 
@@ -68,4 +56,4 @@
 	>>> matrix_divided(matrix, "3")
 	Traceback (most recent call last):
         ...
-	TypeError: div must be an integer
+	TypeError: div must be a number
