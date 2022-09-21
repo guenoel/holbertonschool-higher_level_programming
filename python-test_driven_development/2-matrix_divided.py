@@ -7,9 +7,6 @@ def matrix_divided(matrix, div):
     rows = len(matrix)
     columns = len(matrix[0])
 
-    if type(div) is not int and type(div) is not float:
-        raise ValueError("matrix must be a matrix (list of lists) of integers/floats")
-
     for row in matrix:
         if len(row) == len(matrix[0]):
             pass
@@ -19,13 +16,14 @@ def matrix_divided(matrix, div):
     for x in range(rows):
         row = []
         for y in range(columns):
-            if y is None or type(y) is not int and type(y) is not float or y != y:
-                raise TypeError("All element of the matrix must be integer")
-            elif div is None or type(div) is not int and type(div) is not float or div != div:
-                raise TypeError("div must be an integer")
+            num = matrix[x][y]
+            if num is None or not isinstance(num, (float, int)):
+                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            elif div is None or not isinstance(div, (float, int)):
+                raise TypeError("div must be a number")
             elif div == 0:
                 raise ZeroDivisionError("division by zero")
             else:
                 row.append(float("{:.2f}".format(matrix[x][y] / div)))
-        new_matrix.append(row)
+            new_matrix.append(row)
     return new_matrix
