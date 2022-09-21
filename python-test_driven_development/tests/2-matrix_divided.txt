@@ -47,3 +47,10 @@ Non-Numbers
     Traceback (most recent call last):
         ...
     TypeError: div must be an integer
+
+::
+
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: A number can not be divided by zero
