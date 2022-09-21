@@ -7,6 +7,11 @@ def matrix_divided(matrix, div):
     rows = len(matrix)
     columns = len(matrix[0])
 
+    for row in matrix:
+        if len(row) == len(matrix[0]):
+            pass
+        else:
+            raise ValueError("Each row of the matrix must have the same size")
     new_matrix = []
     for x in range(rows):
         row = []
@@ -19,8 +24,5 @@ def matrix_divided(matrix, div):
                 raise ZeroDivisionError("A number can not be divided by zero")
             else:
                 row.append(float("{:.2f}".format(matrix[x][y] / div)))
-        if columns == len(row):
-            new_matrix.append(row)
-        else:
-            raise ValueError("Each row of the matrix must have the same size")
+        new_matrix.append(row)
     return new_matrix
