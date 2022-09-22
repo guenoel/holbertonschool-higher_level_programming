@@ -1,0 +1,33 @@
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("""texte""")
+    texte
+
+::
+
+    >>> text_indentation("""texte1. texte2""")
+    texte1.
+    <BLANKLINE>
+    texte2
+
+::
+
+    >>> text_indentation("""     texte1.     texte2""")
+    texte1.
+    <BLANKLINE>
+    texte2
+
+::
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+::
+
+    >>> text_indentation(9)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
