@@ -2,9 +2,6 @@
 """Commentaire de module"""
 
 
-from curses.textpad import rectangle
-
-
 class Rectangle:
     """Commentaire de classe"""
 
