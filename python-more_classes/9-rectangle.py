@@ -90,10 +90,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if type(size) != int:
-            del cls
-            raise TypeError("width must be an integer")
-        if size < 0:
-            del cls
-            raise ValueError("width must be >= 0")
         return cls(size, size)
