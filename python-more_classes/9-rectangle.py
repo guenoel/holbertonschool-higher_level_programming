@@ -2,9 +2,6 @@
 """Commentaire de module"""
 
 
-from turtle import width
-
-
 class Rectangle:
     """Commentaire de classe"""
 
