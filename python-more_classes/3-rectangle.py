@@ -57,4 +57,3 @@ class Rectangle:
             if i != self.__height-1 and self.__width != 0:
                 rect += "\n"
         return rect
-        
