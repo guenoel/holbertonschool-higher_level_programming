@@ -3,6 +3,7 @@
 
 
 class MyList(list):
+    """Classe qui affiche les tableau rangés"""
 
     def print_sorted(self):
         newlist = self.copy()
