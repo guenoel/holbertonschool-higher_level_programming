@@ -3,4 +3,6 @@
 
 
 class BaseGeometry:
+    """Classe vide"""
+
     pass
