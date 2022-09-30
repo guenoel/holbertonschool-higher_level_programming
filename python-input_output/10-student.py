@@ -3,10 +3,6 @@
 """
 
 
-from pickle import APPEND
-from readline import append_history_file
-
-
 class Student:
     """ My class student
     """
