@@ -17,6 +17,7 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """methode that return a json string from a list of dict"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
