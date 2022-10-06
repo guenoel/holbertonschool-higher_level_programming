@@ -95,7 +95,7 @@ class Rectangle(Base):
             if len(args) > 4:
                 self.y = args[4]
         else:
-            #for i in kwargs
-            #exec("%s = %d" % ("self." + i, kwargs[i]))
+            # for i in kwargs
+            # exec("%s = %d" % ("self." + i, kwargs[i]))
             for key, value in kwargs.items():
                 setattr(self, key, value)
