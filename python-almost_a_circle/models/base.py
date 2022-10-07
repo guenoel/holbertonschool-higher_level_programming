@@ -27,6 +27,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+<<<<<<< HEAD
         if list_objs is None:
             with open(cls.__name__+".json", "w") as file:
                 file.write("[]")
@@ -38,8 +39,17 @@ class Base:
             with open(cls.__name__+".json", "w") as file:
                 file.write(cls.to_json_string(dict_objs))
             file.close()
+=======
+        dict_objs = [obj.to_dictionary() for obj in list_objs]
+        # for obj in list_objs:
+        #     dict_objs = obj.to_dictionary()
+        with open(cls.__name__+".json", "w") as file:
+            file.write(cls.to_json_string(dict_objs))
+        file.close()
+>>>>>>> 6f565d8ee380c9921f3799f230a35d187b8b5cec
 
     def from_json_string(json_string):
+        """Method that return a string from a JSon file"""
         list_of_dico = []
         if json_string and json_string != '':
             if type(json_string) != str:
@@ -49,6 +59,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Method that update attributes of an instance"""
         if cls.__name__ == "Rectangle":
             my_rectangle = cls(1, 1)
         if cls.__name__ == "Square":
@@ -58,12 +69,13 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Method that create a list dict of instances"""
         filename = cls.__name__ + ".json"
         list_of_dict = []
-        l=[]
+        l = []
         if os.path.exists(filename):
             with open(filename, 'r') as file:
                 s = file.read()
                 list_of_dict = cls.from_json_string(s)
                 [l.append(cls.create(**dico)) for dico in list_of_dict]
-            return l
+        return l
