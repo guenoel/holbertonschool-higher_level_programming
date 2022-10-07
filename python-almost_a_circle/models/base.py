@@ -27,17 +27,12 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        if list_objs is None:
-            with open(cls.__name__+".json", "w") as file:
-                file.write([])
-            file.close()
-        else:
-            dict_objs = [obj.to_dictionary() for obj in list_objs]
-            # for obj in list_objs:
-            #     dict_objs = obj.to_dictionary()
-            with open(cls.__name__+".json", "w") as file:
-                file.write(cls.to_json_string(dict_objs))
-            file.close()
+        dict_objs = [obj.to_dictionary() for obj in list_objs]
+        # for obj in list_objs:
+        #     dict_objs = obj.to_dictionary()
+        with open(cls.__name__+".json", "w") as file:
+            file.write(cls.to_json_string(dict_objs))
+        file.close()
 
     def from_json_string(json_string):
         """Method that return a string from a JSon file"""
