@@ -40,6 +40,7 @@ class Base:
             file.close()
 
     def from_json_string(json_string):
+        """Method that return a string from a JSon file"""
         list_of_dico = []
         if json_string and json_string != '':
             if type(json_string) != str:
@@ -49,6 +50,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Method that update attributes of an instance"""
         if cls.__name__ == "Rectangle":
             my_rectangle = cls(1, 1)
         if cls.__name__ == "Square":
@@ -58,6 +60,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Method that create a list dict of instances"""
         filename = cls.__name__ + ".json"
         list_of_dict = []
         l=[]
