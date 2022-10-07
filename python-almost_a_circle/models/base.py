@@ -63,7 +63,7 @@ class Base:
         """Method that create a list dict of instances"""
         filename = cls.__name__ + ".json"
         list_of_dict = []
-        l=[]
+        l = []
         if os.path.exists(filename):
             with open(filename, 'r') as file:
                 s = file.read()
