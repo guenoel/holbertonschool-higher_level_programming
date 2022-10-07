@@ -69,4 +69,4 @@ class Base:
                 s = file.read()
                 list_of_dict = cls.from_json_string(s)
                 [l.append(cls.create(**dico)) for dico in list_of_dict]
-            return l
+        return l
