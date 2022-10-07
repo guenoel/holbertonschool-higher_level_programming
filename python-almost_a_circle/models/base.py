@@ -27,7 +27,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-<<<<<<< HEAD
+        """Method that save to a file attributes of objects in JSon format"""
         if list_objs is None:
             with open(cls.__name__+".json", "w") as file:
                 file.write("[]")
@@ -39,14 +39,6 @@ class Base:
             with open(cls.__name__+".json", "w") as file:
                 file.write(cls.to_json_string(dict_objs))
             file.close()
-=======
-        dict_objs = [obj.to_dictionary() for obj in list_objs]
-        # for obj in list_objs:
-        #     dict_objs = obj.to_dictionary()
-        with open(cls.__name__+".json", "w") as file:
-            file.write(cls.to_json_string(dict_objs))
-        file.close()
->>>>>>> 6f565d8ee380c9921f3799f230a35d187b8b5cec
 
     def from_json_string(json_string):
         """Method that return a string from a JSon file"""
