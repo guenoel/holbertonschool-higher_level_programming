@@ -29,7 +29,7 @@ class Base:
     def save_to_file(cls, list_objs):
         if list_objs is None:
             with open(cls.__name__+".json", "w") as file:
-                file.write([])
+                file.write("[]")
             file.close()
         else:
             dict_objs = [obj.to_dictionary() for obj in list_objs]
