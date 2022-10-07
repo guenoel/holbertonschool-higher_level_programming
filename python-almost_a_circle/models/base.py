@@ -37,3 +37,12 @@ class Base:
             with open(cls.__name__+".json", "w") as file:
                 file.write(cls.to_json_string(dict_objs))
             file.close()
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            my_rectangle = cls(1, 1)
+        if cls.__name__ == "Square":
+            my_rectangle = cls(1)
+        my_rectangle.update(**dictionary)
+        return my_rectangle
