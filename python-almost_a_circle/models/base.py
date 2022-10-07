@@ -2,6 +2,7 @@
 """Commentaire de module"""
 
 import json
+import os
 
 
 class Base:
@@ -38,6 +39,14 @@ class Base:
                 file.write(cls.to_json_string(dict_objs))
             file.close()
 
+    def from_json_string(json_string):
+        list_of_dico = []
+        if json_string and json_string != '':
+            if type(json_string) != str:
+                raise TypeError("json_string must be a string")
+            list_of_dico = json.loads(json_string)
+        return list_of_dico
+
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
@@ -46,3 +55,15 @@ class Base:
             my_rectangle = cls(1)
         my_rectangle.update(**dictionary)
         return my_rectangle
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        list_of_dict = []
+        l=[]
+        if os.path.exists(filename):
+            with open(filename, 'r') as file:
+                s = file.read()
+                list_of_dict = cls.from_json_string(s)
+                [l.append(cls.create(**dico)) for dico in list_of_dict]
+            return l
