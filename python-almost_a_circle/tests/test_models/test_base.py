@@ -29,17 +29,7 @@ class TestBase(unittest.TestCase):
         b2 = Base(89)
         self.assertEqual(b2.id, 89)
 
-    def test_4_0(self):
-        """Create new instance with value 0 - id check"""
-        b3 = Base(0)
-        self.assertEqual(b3.id, 0)
-
-    def test_5_0(self):
-        """Create new instance with number non-preallocated - id check"""
-        b4 = Base(421)
-        self.assertEqual(b4.id, 421)
-
-    def test_6_0(self):
-        """Create new instance with negative number - id check"""
-        b5 = Base(-2)
-        self.assertEqual(b5.id, -2)
+    def test_1_1(self):
+        """to json string with value 0 - id check"""
+        b3 = Base.to_json_string(None)
+        self.assertEqual(b3, "[]")
