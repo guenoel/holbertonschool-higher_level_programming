@@ -3,13 +3,12 @@
 
 import unittest
 from models.base import Base
+import json
+import sys
 
 
 class TestBase(unittest.TestCase):
     """Test class for Base class"""
-
-    def setUp(self):
-        Base._Base__nb_objects = 0
 
     def test_1_0(self):
         """Create new instances - id check"""
