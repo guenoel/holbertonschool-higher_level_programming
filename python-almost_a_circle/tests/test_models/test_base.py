@@ -16,6 +16,8 @@ class TestBase(unittest.TestCase):
 
         b0 = Base()
         self.assertEqual(b0.id, 1)
+
+    def test_2_0(self):
         b1 = Base()
         self.assertEqual(b1.id, 2)
         b2 = Base(89)
