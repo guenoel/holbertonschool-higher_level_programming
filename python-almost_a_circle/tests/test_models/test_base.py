@@ -30,6 +30,11 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 89)
 
     def test_1_1(self):
-        """to json string with value 0 - id check"""
+        """to json string with None value  - id check"""
         b3 = Base.to_json_string(None)
-        self.assertEqual(b3, "[]")
+        self.assertEqual(b3, "'[]'")
+
+    def test_1_2(self):
+        """to json string with None value - id check"""
+        b4 = Base.from_json_string(None)
+        self.assertEqual(b4, "'[]'")
