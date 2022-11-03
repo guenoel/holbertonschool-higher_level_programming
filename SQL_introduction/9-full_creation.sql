@@ -1,4 +1,9 @@
 -- full creation
+CREATE TABLE IF NOT EXISTS first_table (
+    id INT,
+    name VARCHAR(256),
+    score INT
+)
 INSERT INTO hbtn_0c_0.second_table (
     id,
     name,
