@@ -1,2 +1,2 @@
 -- list with conditions
-SELECT score,name FROM second_table IF(score>=10, "YES", "NO") ORDER BY score;
+SELECT score,name, IF(score>=10, "YES", "NO") FROM second_table ORDER BY score;
