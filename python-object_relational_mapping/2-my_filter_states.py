@@ -14,7 +14,6 @@ if __name__ == "__main__":
         db=argv[3]
     )
     c = db.cursor()
-    c.execute("""SELECT * FROM states ORDER BY id""")
+    c.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id".format(argv[4]))
     for row in c.fetchall():
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
