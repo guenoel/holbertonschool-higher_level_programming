@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Connect to a MySQL database with MySQLdb connector and print result of query """
 
+
 from sys import argv
 import MySQLdb
 
