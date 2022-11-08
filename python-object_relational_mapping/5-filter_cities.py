@@ -23,5 +23,5 @@ if __name__ == "__main__":
             if flag is not False:
                 print(", ", end='')
             print(row[1], end='')
-            flag=True
+            flag = True
     print()
