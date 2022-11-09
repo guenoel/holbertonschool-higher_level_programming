@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     result = session.query(State.id, State.name).filter(State.name == sys.argv[4])
 
-    if result != None:
+    if result:
         for row in result:
             print(row.id)
     else:

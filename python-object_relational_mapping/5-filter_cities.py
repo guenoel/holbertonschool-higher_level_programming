@@ -27,7 +27,6 @@ if __name__ == "__main__":
     print()
     c.close()
 
-
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
