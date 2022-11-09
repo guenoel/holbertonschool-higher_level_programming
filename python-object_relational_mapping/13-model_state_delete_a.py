@@ -6,7 +6,7 @@ from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import update
+from sqlalchemy import delete
 
 if __name__ == "__main__":
     Base = declarative_base()
@@ -15,5 +15,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State).filter_by(id='2').update({'name': "New Mexico"})
+    result = session.delete(State).where(State.name.contains("a"))
     session.commit()
