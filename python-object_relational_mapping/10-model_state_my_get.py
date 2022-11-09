@@ -10,11 +10,15 @@ from sqlalchemy.ext.declarative import declarative_base
 if __name__ == "__main__":
     Base = declarative_base()
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                            .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+                           .format(sys.argv[1],
+                                   sys.argv[2],
+                                   sys.argv[3]),
+                           pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State.id, State.name).filter(State.name == sys.argv[4]).first()
+    result = session.query(State.id, State.name)\
+        .filter(State.name == sys.argv[4]).first()
 
     if result is not None or result:
         print(result[0])
