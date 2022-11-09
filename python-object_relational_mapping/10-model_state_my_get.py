@@ -19,3 +19,5 @@ if __name__ == "__main__":
     for row in result:
         if row.name == sys.argv[4]:
             print(row.id)
+        else:
+            print("Not found")
