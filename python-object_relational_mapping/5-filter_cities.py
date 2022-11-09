@@ -25,3 +25,15 @@ if __name__ == "__main__":
             print(row[1], end='')
             flag = True
     print()
+    c.close()
+
+
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
+class State(Base):
+    __states__ = 'states'
+    id = Column("id", Integer, primary_key=True)
+    name =  Column(String(128), nullable=False)
