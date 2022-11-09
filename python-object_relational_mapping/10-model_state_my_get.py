@@ -14,12 +14,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State.id, State.name)
+    result = session.query(State.id, State.name).filter(State.name == sys.argv[4])
 
-    flag = False
-    for row in result:
-        if row.name == sys.argv[4]:
+    if result != None:
+        for row in result:
             print(row.id)
-            flag = True
-    if flag == False:
+    else:
         print("Not found")
