@@ -5,7 +5,6 @@ import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 if __name__ == "__main__":
