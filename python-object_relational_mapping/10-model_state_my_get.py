@@ -16,8 +16,10 @@ if __name__ == "__main__":
 
     result = session.query(State.id, State.name)
 
+    flag = False
     for row in result:
         if row.name == sys.argv[4]:
             print(row.id)
-        else:
-            print("Not found")
+            flag = True
+    if flag == False:
+        print("Not found")
