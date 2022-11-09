@@ -14,8 +14,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State.id, State.name)
+    result = session.query(State.id, State.name).first()
 
-    for row in result:
-        if row[1] == "California":
-            print("{}: {}".format(row.id, row.name))
+    print("{}: {}".format(result.id, result.name))
