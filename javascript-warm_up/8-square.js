@@ -9,7 +9,7 @@ if (arg === undefined || isNaN(arg)) {
 }
 for (let i = 0; i < arg; i++) {
   for (let i = 0; i < arg; i++) {
-    process.stdout.write('x');
+    process.stdout.write('X');
   }
   process.stdout.write('\n');
 }
