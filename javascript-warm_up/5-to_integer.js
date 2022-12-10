@@ -3,9 +3,9 @@
 integer
 */
 
-const n = process.argv[2];
+const n = parseInt(process.argv[2]);
 
-if (!isNaN(n)) {
+if (Number.isInteger(n)) {
   console.log('My number: %s', process.argv[2]);
 } else {
   console.log('Not a number');
