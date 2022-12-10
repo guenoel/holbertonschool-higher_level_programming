@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-add
+factoriel
 */
 
 function facto (a) {
