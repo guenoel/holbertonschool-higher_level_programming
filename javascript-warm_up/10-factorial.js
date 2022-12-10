@@ -4,12 +4,10 @@ add
 */
 
 function facto (a) {
-  res = 1
-  for (i = 0; i < a; i++) {
+  let res = 1;
+  for (let i = 0; i < a; i++) {
     res *= (i + 1);
   }
   return res;
-  }
-  
-  console.log(facto(parseInt(process.argv[2])));
-  
+}
+console.log(facto(parseInt(process.argv[2])));
