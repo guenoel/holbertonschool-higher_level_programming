@@ -3,6 +3,5 @@
 concat
 */
 
-const words = process.argv[2] + " is " + process.argv[3]
+const words = process.argv[2] + ' is ' + process.argv[3];
 console.log(words);
-  
