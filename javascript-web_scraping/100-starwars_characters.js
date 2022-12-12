@@ -6,8 +6,8 @@ request(theURL, function (error, response) {
   if (error) {
     console.error('error:', error); // Print the error if one occurred
   }
-  listURL = JSON.parse(response.body).characters;
-  for (URLchar of listURL) {
+  const listURL = JSON.parse(response.body).characters;
+  for (const URLchar of listURL) {
     request(URLchar, function (error, response) {
       if (error) {
         console.error('error:', error); // Print the error if one occurred
