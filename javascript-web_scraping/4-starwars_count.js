@@ -9,7 +9,7 @@ request(process.argv[2], function (error, response, body) {
   let count = 0;
   for (const elem of parsing.results) {
     for (const people of elem.characters) {
-      if (people === 'https://swapi-api.hbtn.io/api/people/18/') {
+      if (people.includes(18)) {
         count++;
       }
     }
