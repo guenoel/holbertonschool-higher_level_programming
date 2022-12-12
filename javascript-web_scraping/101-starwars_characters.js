@@ -6,7 +6,7 @@ request(theURL, function (error, response) {
   if (error) {
     console.error('error:', error); // Print the error if one occurred
   }
-  const listURL = JSON.parse(response.body).characters;
+  const listURL = JSON.parse(response.body).characters.sort();
   for (const URLchar of listURL) {
     request(URLchar, function (error, response) {
       if (error) {
