@@ -1,22 +1,17 @@
 #!/usr/bin/node
 const request = require('request');
 
-function compareNumbers(a, b) {
-    return a - b;
-  }
-
 const theURL = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
-request(theURL, function (error, response) {
-  if (error) {
-    console.error('error:', error); // Print the error if one occurred
-  }
-  const listURL = JSON.parse(response.body).characters.sort(compareNumbers);
+request(theURL, async function (error, response) {
+  if (error) {console.error('error:', error);}
+  const listURL = JSON.parse(response.body).characters;
   for (const URLchar of listURL) {
-    request(URLchar, function (error, response) {
-      if (error) {
-        console.error('error:', error); // Print the error if one occurred
-      }
-      console.log(JSON.parse(response.body).name);
+    await new Promise((resolve, reject) => {
+      request(URLchar, function (error, response) {
+        if (error) { reject(err); }
+        console.log(JSON.parse(response.body).name);
+        resolve();
+      });
     });
   }
 });
