@@ -12,3 +12,4 @@ $('#clear_list').click(function () {
   $('.my_list').empty();
 });
 })
+
